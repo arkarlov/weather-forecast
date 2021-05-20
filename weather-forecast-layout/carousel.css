@@ -1,0 +1,34 @@
+/* carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel__content {
+  width: 100%;
+}
+
+.carousel__track {
+  display: grid;
+  grid-template-columns: repeat(3, 174px);
+  column-gap: 10px;
+}
+
+.carousel__button {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel__button {
+    display: none;
+  }
+}
+
+.carousel__button_left {
+  left: -30px;
+}
+.carousel__button_right {
+  right: -30px;
+}

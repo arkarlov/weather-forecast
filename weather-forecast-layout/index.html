@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/normalize.css">
+  <link rel="stylesheet" href="./assets/styles/fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <title>weather-forecast</title>
+</head>
+<body>
+  <div class="app">
+
+    <h1 class="app__title">
+      <span class="app__title-top">weather</span>
+      <span class="app__title-bottom">forecast</span>
+    </h1>
+
+    <main class="app__main">
+
+      <section class="forecast-card">
+        <h2 class="forecast-card__title">7 Days Forecast</h2>
+        <div class="forecast-card__selectors">
+          <select class="selector" name="city" id="city-selector">
+            <option value="default" disabled selected>Select city</option>
+            <option value="moscow">moscow</option>
+            <option value="samara">samara</option>
+            <option value="kazan">kazan</option>
+            <option value="saratov">saratov</option>
+            <option value="volgograd">volgograd</option>
+            <option value="izhevsk">izhevsk</option>
+          </select>
+        </div>
+
+        <section class="forecast-card__content forecast-card__content_wide1">
+          <figure class="placeholder" style="display: none;">
+            <img class="placeholder__img" src="./assets/Placeholder/Academy-Weather-bg160.png" alt="cloud" width="160" height="160">
+            <figcaption class="placeholder__caption">Fill in all the fields and the weather will be displayed</figcaption>
+          </figure>
+          <div class="carousel" >
+            <button class="carousel__button carousel__button_left button button_prev button_disabled"></button>
+            <div class="carousel__content">
+              <div class="carousel__track">
+                <article class="weather-card weather-card_fixed">
+                  <h3 class="weather-card__title"><span class="weather-card__date">27 sep 2021</span></h3>
+                  <img class="weather-card__img" src="./assets/Placeholder/Academy-Weather-bg160.png" alt="rain" width="100" height="100">
+                  <p class="weather-card__text">+17&#176;</p>
+                </article>
+                <article class="weather-card weather-card_fixed">
+                  <h3 class="weather-card__title"><span class="weather-card__date">27 sep 2021</span></h3>
+                  <img class="weather-card__img" src="./assets/Placeholder/Academy-Weather-bg160.png" alt="rain" width="100" height="100">
+                  <p class="weather-card__text">+17&#176;</p>
+                </article>
+                <article class="weather-card weather-card_fixed">
+                  <h3 class="weather-card__title"><span class="weather-card__date">27 sep 2021</span></h3>
+                  <img class="weather-card__img" src="./assets/Placeholder/Academy-Weather-bg160.png" alt="rain" width="100" height="100">
+                  <p class="weather-card__text">+17&#176;</p>
+                </article>
+              </div>
+            </div>            
+            <button class="carousel__button carousel__button_right button button_next"></button>
+          </div>
+        </section>
+      </section>
+
+      <section class="forecast-card">
+        <h2 class="forecast-card__title">Forecast for a Date in the Past</h2>
+        <div class="forecast-card__selectors">
+          <select class="selector" name="city" id="city-selector">
+            <option value="default" disabled selected>Select city</option>
+            <option value="moscow">moscow</option>
+            <option value="samara">samara</option>
+            <option value="kazan">kazan</option>
+            <option value="saratov">saratov</option>
+            <option value="volgograd">volgograd</option>
+            <option value="izhevsk">izhevsk</option>
+          </select>
+          <input class="selector" type="date" name="date" id="date">
+        </div>
+        <section class="forecast-card__content">
+          <figure class="forecast-card__placeholder placeholder">
+            <img class="placeholder__img" src="./assets/Placeholder/Academy-Weather-bg160.png" alt="cloud">
+            <figcaption class="placeholder__caption">Fill in all the fields and the weather will be displayed</figcaption>
+          </figure>  
+          <article class="forecast-card__weather-card weather-card" style="display: none;">
+            <h3 class="weather-card__title"><span class="weather-card__date">27 sep 2021</span></h3>
+            <img class="weather-card__img" src="./assets/Placeholder/Academy-Weather-bg160.png" alt="rain" width="100" height="100">
+            <p class="weather-card__text">+17&#176;</p>
+          </article>
+        </section>
+      </section>
+    </main>
+    <footer class="app__footer">
+      <p class="app__footer-caption">C ЛЮБОВЬЮ ОТ MERCURY DEVELOPMENT</p>
+    </footer>
+  </div>  
+</body>
+</html>
