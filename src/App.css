@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  padding: 65px 45px 16px;
+  box-sizing: border-box;
+  background-color: #373af5;
+  background-image: url("./assets/Background/Academy-Weather\ forecast-Bg-buttom.png"),
+    url("./assets/Background/Academy-Weather\ forecast-Bg-up-1.png");
+  background-repeat: no-repeat;
+  background-position: bottom left, top right;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 1440px) {
+  .app {
+    background-position: bottom left, top left;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1280px) {
+  .app {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-position: bottom left, top right -160px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 32px 10px 16px;
+    background-position: bottom left, top right;
+    background-size: 200%, 100%;
   }
+}
+
+.app__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 60px;
+  padding: 0;
+  width: 100%;
+  max-width: 775px;
+  font-weight: bold;
+  font-size: 102px;
+  line-height: 90px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1280px) {
+  .app__title {
+    margin-bottom: 65px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app__title {
+    margin-bottom: 24px;
+    max-width: 243px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.app__title-top {
+  text-transform: capitalize;
+}
+.app__title-bottom {
+  align-self: flex-end;
+}
+
+.app__main {
+  display: flex;
+  column-gap: 30px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 46px;
+  width: 100%;
+  max-width: 1350px;
+}
+
+@media screen and (max-width: 1280px) {
+  .app__main {
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app__main {
+    row-gap: 10px;
+    margin-bottom: 78px;
+  }
+}
+
+.app__footer {
+  margin-top: auto;
+}
+
+.app__footer-caption {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0.6;
 }
