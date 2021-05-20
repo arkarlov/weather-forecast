@@ -1,0 +1,65 @@
+/* carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel__content {
+  width: 100%;
+}
+
+.carousel__track {
+  display: grid;
+  grid-template-columns: repeat(3, 174px);
+  column-gap: 10px;
+}
+
+.carousel__button {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel__button {
+    display: none;
+  }
+}
+
+.carousel__button_left {
+  left: -30px;
+}
+.carousel__button_right {
+  right: -30px;
+}
+
+
+
+.button {
+  width: 24px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  background: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../../assets/icons/24/chevron-left.png");
+  cursor: pointer;
+}
+
+.button_next {
+  transform: rotate(180deg);
+}
+
+.button_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.button:hover {
+  background-color: hsla(239, 90%, 59%, 0.082);
+}
+
