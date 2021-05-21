@@ -7,8 +7,10 @@ import Placeholder from './components/placeholder/placeholder'
 import WeatherCard from './components/weather-card/weather-card'
 import placeholderImage from './assets/Placeholder/Academy-Weather-bg160.png'
 import { CitySelector, DateSelector } from './components/selectors/selectors'
-import GetData from './controllers/get-data'
+import getData from './controllers/get-api-data'
 import Carousel from './components/carousel/carousel'
+import getUrl from './controllers/get-api-url'
+import getCityCoords from './controllers/get-city-coords'
 
 const cities = ["moscow", "samara", "kazan", "saratov", "volgograd", "izhevsk", 'penza']
 
@@ -18,8 +20,12 @@ function App () {
   const caption = 'test'
   const temperature = '+17'
 
-  GetData()
+  async function showData () {
+    const {lat, lon} = getCityCoords('samara')
+    console.log(await getData(getUrl(lat, lon)))
+  }
 
+  showData()
 
   return (
     <div className='app'>
