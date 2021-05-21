@@ -13,8 +13,6 @@ import getUrl from './controllers/get-api-url'
 import getCityCoords from './controllers/get-city-coords'
 import { handleDailyResponse, handlePastResponse } from './controllers/api-response-handler'
 
-import placeholderImage from './assets/Placeholder/Academy-Weather-bg160.png'
-
 
 function App () {
     
