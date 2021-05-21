@@ -1,22 +1,25 @@
 import React, { useState } from 'react'
 import './selectors.css'
 
+
 type CityProps = {
-  cities: string[]
+  id: string,
+  cities: string[],
+  handleSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
 export function CitySelector(props: CityProps) {
 
-  const { cities } = props
+  const { id, cities, handleSelect } = props
   const [city, setCity] = useState("default");
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setCity(event.target.value)
-    console.log(event.target)
+    handleSelect(event)
   }
 
   return (
-    <select className="selector" name="city" value={city} onChange={ handleChange }>
+    <select id={id} className="selector" name="city" value={city} onChange={ handleChange }>
       <option value="default" disabled hidden>Select city</option>
       {
         cities.map((city) => (
@@ -28,16 +31,24 @@ export function CitySelector(props: CityProps) {
 }
 
 
-export function DateSelector() {
+type DateProps = {
+  id: string,
+  handleSelect: (inputDateValue: string) => void
+}
 
-  const [date, setDate] = useState("");
+export function DateSelector(props: DateProps) {
+
+  const {id, handleSelect} = props
+
+  const [date, setDate] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDate(event.target.value)
+    handleSelect(event.target.value)
   }
 
   return (
-    <input className="selector" type="date" name="date" id="date" value={ date } onChange={ handleChange } />
+    <input id={id} className="selector" type="date" name="date" value={ date } onChange={ handleChange } />
   )
 
 }
