@@ -4,15 +4,14 @@ import './carousel.css'
 
 type CarouselProps = {
   weatherData: WeatherCardData[]
-  check: boolean
 }
 
 
 function Carousel (props: CarouselProps) {
 
-  const { weatherData, check } = props
+  const { weatherData } = props
 
-  console.log(weatherData, check)
+  console.log(weatherData)
 
   const showCardFrom = 1
 
