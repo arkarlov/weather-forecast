@@ -23,5 +23,4 @@ export function handlePastResponse (PastData: ForecastData) {
   const caption = current.weather[0].description
 
   return {date, temperature, icon, caption}
-
 }

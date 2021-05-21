@@ -11,7 +11,6 @@ function Carousel (props: CarouselProps) {
 
   const { weatherData } = props
 
-  console.log(weatherData)
 
   const showCardFrom = 1
 
