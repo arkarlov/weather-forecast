@@ -31,6 +31,7 @@ export function CitySelector(props: CityProps) {
 }
 
 
+
 type DateProps = {
   id: string,
   handleSelect: (inputDateValue: string) => void
@@ -47,8 +48,17 @@ export function DateSelector(props: DateProps) {
     handleSelect(event.target.value)
   }
 
-  return (
-    <input id={id} className="selector" type="date" name="date" value={ date } onChange={ handleChange } />
-  )
+  const currentDate = new Date()
+  currentDate.setDate(currentDate.getDate() - 1)
+  const maxDate = getFormattedDate(currentDate)
+  currentDate.setDate(currentDate.getDate() - 4)
+  const minDate = getFormattedDate(currentDate)
 
+  return (
+    <input id={id} className="selector" type="date" name="date" min={ minDate } max={ maxDate } value={ date } onChange={ handleChange } required />
+  )
+}
+
+function getFormattedDate (date: Date): string {
+  return `${ date.getFullYear() }-${ (0 + `${ date.getMonth() + 1 }`).slice(-2) }-${ (0 + `${ date.getDate() }`).slice(-2) }`
 }
