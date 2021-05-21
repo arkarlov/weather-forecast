@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ArtemKarlov/weather-forecast/static/css/main.4f00c5d4.chunk.css",
+    "main.js": "/ArtemKarlov/weather-forecast/static/js/main.728dbb87.chunk.js",
+    "main.js.map": "/ArtemKarlov/weather-forecast/static/js/main.728dbb87.chunk.js.map",
+    "runtime-main.js": "/ArtemKarlov/weather-forecast/static/js/runtime-main.f3ae731a.js",
+    "runtime-main.js.map": "/ArtemKarlov/weather-forecast/static/js/runtime-main.f3ae731a.js.map",
+    "static/css/2.679831fc.chunk.css": "/ArtemKarlov/weather-forecast/static/css/2.679831fc.chunk.css",
+    "static/js/2.1aa85ec8.chunk.js": "/ArtemKarlov/weather-forecast/static/js/2.1aa85ec8.chunk.js",
+    "static/js/2.1aa85ec8.chunk.js.map": "/ArtemKarlov/weather-forecast/static/js/2.1aa85ec8.chunk.js.map",
+    "static/js/3.4f293244.chunk.js": "/ArtemKarlov/weather-forecast/static/js/3.4f293244.chunk.js",
+    "static/js/3.4f293244.chunk.js.map": "/ArtemKarlov/weather-forecast/static/js/3.4f293244.chunk.js.map",
+    "index.html": "/ArtemKarlov/weather-forecast/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/ArtemKarlov/weather-forecast/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.4f00c5d4.chunk.css.map": "/ArtemKarlov/weather-forecast/static/css/main.4f00c5d4.chunk.css.map",
+    "static/js/2.1aa85ec8.chunk.js.LICENSE.txt": "/ArtemKarlov/weather-forecast/static/js/2.1aa85ec8.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/ArtemKarlov/weather-forecast/static/media/Academy-Weather forecast-Bg-up-1.e73b4841.png",
+    "static/media/index.css": "/ArtemKarlov/weather-forecast/static/media/Ubuntu-Regular.5d534041.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3ae731a.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.1aa85ec8.chunk.js",
+    "static/css/main.4f00c5d4.chunk.css",
+    "static/js/main.728dbb87.chunk.js"
+  ]
+}
