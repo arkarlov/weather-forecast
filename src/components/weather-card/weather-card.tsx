@@ -2,14 +2,14 @@ import React from 'react'
 import { JsxElement } from 'typescript'
 import './weather-card.css'
 
-type ComponentProps = {
+export type WeatherCardData = {
   date: string,
-  icon: string
+  icon: string,
   caption: string,
   temperature: string
 }
 
-function WeatherCard (props: ComponentProps) {
+function WeatherCard (props: WeatherCardData) {
   
   const { date, icon, caption, temperature} = props
 

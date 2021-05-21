@@ -1,5 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
-import { CitySelector, DateSelector } from '../selectors/selectors'
+import React from 'react'
 import './forecast-card.css'
 
 type ComponentProps = {
