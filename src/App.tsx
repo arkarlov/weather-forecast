@@ -57,20 +57,25 @@ function App () {
   async function showDailyForecast (cityName: string) {
     setIsDataLoaded(false)
     const {lat, lon} = getCityCoords(cityName)
+    
     const forecastData = await getData(getUrl(lat, lon))  
+
     setCarouselData(handleDailyResponse(forecastData))
     setIsDataLoaded(true)
   }
 
   async function showPastForecast (cityName: string, date: string) {
     if (isPastDataLoaded) setIsPastDataLoaded(false)
+
     const {lat, lon} = getCityCoords(cityName)
+
     const inputtedDate = new Date(date)
     inputtedDate.setHours(12)  // for load day icon instead night
     const dateRequest = (Math.floor(inputtedDate.getTime() / 1000)).toString()
+
     const url = getUrl(lat, lon, dateRequest)
     const forecastData = await getData(url)
-    console.log(forecastData)
+
     setPastWeatherData(handlePastResponse(forecastData))
     setIsPastDataLoaded(true)
   }
