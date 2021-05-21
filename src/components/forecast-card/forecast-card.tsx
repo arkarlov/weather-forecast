@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Children } from 'react'
 import './forecast-card.css'
 
 type ComponentProps = {
   cardTitle: string,
   citySelector: JSX.Element,
   dateSelector?: JSX.Element,
-  content: JSX.Element
+  children: React.ReactNode
 }
 
 function ForecastCard (props: ComponentProps) {
 
-  const { cardTitle, citySelector, dateSelector, content } = props
+  const { cardTitle, citySelector, dateSelector, children } = props
 
   return (
     <section className="forecast-card">
@@ -21,7 +21,7 @@ function ForecastCard (props: ComponentProps) {
       </div>
 
       <section className="forecast-card__content">
-        { content } 
+        { children } 
       </section>
     </section>
   )

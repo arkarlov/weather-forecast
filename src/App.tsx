@@ -11,7 +11,7 @@ import getData from './controllers/get-api-data'
 import Carousel from './components/carousel/carousel'
 import getUrl from './controllers/get-api-url'
 import getCityCoords from './controllers/get-city-coords'
-import handleDailyResponse from './controllers/api-response-handler'
+import { handleDailyResponse } from './controllers/api-response-handler'
 
 
 function App () {
@@ -24,31 +24,35 @@ function App () {
   const [datePast, setDatePast] = useState('')
   const [isDataLoaded, setIsDataLoaded] = useState(false)
 
-  const date = new Date();
+  const getCity = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const city = event.target.value
+    if (event.target.id == 'city-selector-1') {
+      setCityDaily(city)
+      showData(city)
+    } else {
+      setCityPast(city)
+    }
+  }
+
+  const getDate = (inputDateValue: string) => {
+    setDatePast(inputDateValue)
+  }
+
+  
   const icon = placeholderImage
   const caption = 'test'
   const temperature = '+17'
 
 
   
-  let carouselData: Array<WeatherCardData> =  [{
-    date: 'string',
+  let carouselData: Array<WeatherCardData> = [{
+    date: 'strinlg',
     icon: 'string',
     caption: 'string',
     temperature: 'string'
   },
   {
-    date: 'strin546g',
-    icon: 'string',
-    caption: 'string',
-    temperature: 'string'
-  },{
-    date: 'str345ing',
-    icon: 'string',
-    caption: 'string',
-    temperature: 'string'
-  },{
-    date: 'str23ing',
+    date: 'string',
     icon: 'string',
     caption: 'string',
     temperature: 'string'
@@ -57,26 +61,16 @@ function App () {
   async function showData (cityName: string) {
     const {lat, lon} = getCityCoords(cityName)
     const forecastData = await getData(getUrl(lat, lon))  
-    carouselData = handleDailyResponse(forecastData) 
+    carouselData = handleDailyResponse(forecastData)
     setIsDataLoaded(true)
     console.log(carouselData)
+    console.log(forecastData)
   }  
 
 
 
 
-  const getCity = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    if (event.target.id == 'city-selector-1') {
-      setCityDaily(event.target.value)
-      showData(event.target.value)
-    } else {
-      setCityPast(event.target.value)
-    }
-  }
 
-  const getDate = (inputDateValue: string) => {
-    setDatePast(inputDateValue)
-  }
 
   return (
     <div className='app'>
@@ -89,14 +83,23 @@ function App () {
         <ForecastCard 
           cardTitle = { '7 Days Forecast' }
           citySelector = { <CitySelector id='city-selector-1' cities = {cities} handleSelect = { getCity } /> }
-          content ={ cityDaily == 'default' || !isDataLoaded  ? <Placeholder /> : <Carousel weatherData = {carouselData} /> }
-        />
+        > 
+          { cityDaily == 'default' || !isDataLoaded  
+            ? <Placeholder /> 
+            : <Carousel weatherData = {carouselData} check = {isDataLoaded} /> 
+          }
+        </ForecastCard>
+
         <ForecastCard 
           cardTitle = { 'Forecast for a Date in the Past' }
           citySelector = { <CitySelector id='city-selector-2' cities = {cities} handleSelect = { getCity }/> }
           dateSelector = {<DateSelector id='date-selector-1' handleSelect = {getDate} /> }
-          content ={ cityPast == 'default' || datePast == '' ? <Placeholder /> : <WeatherCard date={new Date(datePast).toLocaleDateString('ru-RU', {year: 'numeric', month: 'short', day: 'numeric'})} icon={icon} caption={caption} temperature={temperature} /> }
-        />
+        >
+          { cityPast == 'default' || datePast == '' 
+            ? <Placeholder /> 
+            : <WeatherCard date={new Date(datePast).toLocaleDateString('ru-RU', {year: 'numeric', month: 'short', day: 'numeric'})} icon={icon} caption={caption} temperature={temperature} /> 
+          }
+        </ForecastCard>
       </main>
 
       <footer className="app__footer">
