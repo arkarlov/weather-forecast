@@ -67,7 +67,9 @@ function App () {
   async function showPastForecast (cityName: string, date: string) {
     if (isPastDataLoaded) setIsPastDataLoaded(false)
     const {lat, lon} = getCityCoords(cityName)
-    const dateRequest = (Math.floor(new Date(date).getTime() / 1000)).toString()
+    const inputtedDate = new Date(date)
+    inputtedDate.setHours(12)  // for load day icon instead night
+    const dateRequest = (Math.floor(inputtedDate.getTime() / 1000)).toString()
     const url = getUrl(lat, lon, dateRequest)
     const forecastData = await getData(url)
     console.log(forecastData)
