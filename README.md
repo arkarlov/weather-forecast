@@ -2,7 +2,7 @@
 
 ## Deployment
 
-[deployment]https://ArtemKarlov.github.io/weather-forecast
+[deployment](https://ArtemKarlov.github.io/weather-forecast)
 
 ## Summary
 
@@ -31,4 +31,4 @@ Builds the app for production to the `build` folder.\
 
 ### `npm run deploy`
 
-Deploy project in GitHubPages ([homepage]https://ArtemKarlov.github.io/weather-forecast)
+Deploy project in GitHubPages (homepage: https://ArtemKarlov.github.io/weather-forecast)
