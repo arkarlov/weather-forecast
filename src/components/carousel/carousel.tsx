@@ -1,16 +1,24 @@
-import React from 'react'
-import WeatherCard from '../weather-card/weather-card'
+import React, { useState } from 'react'
+import WeatherCard, { WeatherCardData } from '../weather-card/weather-card'
 import './carousel.css'
 
-import placeholderImage from '../../assets/Placeholder/Academy-Weather-bg160.png'
+type CarouselProps = {
+  weatherData: WeatherCardData[]
+  check: boolean
+}
 
 
-const date = new Date();
-const icon = placeholderImage
-const caption = 'test'
-const temperature = '+17'
+function Carousel (props: CarouselProps) {
 
-function Carousel () {
+  const { weatherData, check } = props
+
+  console.log(weatherData, check)
+
+  const showCardFrom = 1
+
+  const weatherCards = weatherData.map((data) => {
+    return <WeatherCard key={data.date} date={ data.date } icon={ data.icon } caption={ data.caption } temperature={ data.temperature } />
+  })
 
   return (
     <div className="carousel" >
@@ -18,13 +26,13 @@ function Carousel () {
       <div className="carousel__content">
         <div className="carousel__track">
           {
-            <WeatherCard date={date.toLocaleDateString('ru-RU', {year: 'numeric', month: 'short', day: 'numeric'})} icon={icon} caption={caption} temperature={temperature} />
-          }
-                    {
-            <WeatherCard date={date.toLocaleDateString('ru-RU', {year: 'numeric', month: 'short', day: 'numeric'})} icon={icon} caption={caption} temperature={temperature} />
-          }
-                    {
-            <WeatherCard date={date.toLocaleDateString('ru-RU', {year: 'numeric', month: 'short', day: 'numeric'})} icon={icon} caption={caption} temperature={temperature} />
+                        
+            weatherCards.map((card, index) => {
+              if (index >= showCardFrom && index < showCardFrom + 3) {
+                return card
+              }
+            })
+            
           }
         </div>
       </div>            
