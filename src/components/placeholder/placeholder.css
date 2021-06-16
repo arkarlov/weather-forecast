@@ -1,0 +1,21 @@
+/* placeholder */
+.placeholder {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 440px;
+  height: 238px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 24px;
+}
+
+.placeholder__caption {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #8083a4;
+}

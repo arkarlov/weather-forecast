@@ -1,3 +1,19 @@
+@import url("./weather-card.css");
+@import url("./forecast-card.css");
+@import url("./carousel.css");
+@import url("./placeholder.css");
+@import url("./button.css");
+@import url("./selector.css");
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8083a4;
+}
+
 .app {
   display: flex;
   flex-direction: column;
