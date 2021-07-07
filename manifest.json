@@ -1,9 +1,9 @@
 {
   "name": "Weather forecast",
-  "short_name": "Weather forecast",
+  "short_name": "WeatherForecast",
   "description": "MerDev React Bootcamp app",
   "lang": "ru",
-  "start_url": ".",
+  "start_url": "https://artemkarlov.github.io/weather-forecast/",
   "scope": "./",
   "display": "standalone",
   "theme_color": "#ffc107",
