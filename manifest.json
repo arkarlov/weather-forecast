@@ -1,0 +1,28 @@
+{
+  "name": "Weather forecast",
+  "short_name": "Weather forecast",
+  "description": "MerDev React Bootcamp app",
+  "lang": "ru",
+  "start_url": ".",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#ffc107",
+  "background_color": "#fff",
+  "icons": [
+    {
+      "src": "./images/manifest/i-192-weather-forecast.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/manifest/i-512-weather-forecast.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [],
+  "related_applications": [{
+    "platform": "play",
+    "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+  }]
+}
