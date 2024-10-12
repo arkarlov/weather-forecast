@@ -2,7 +2,7 @@
 
 ## Deployment
 
-[deployment](https://ArtemKarlov.github.io/weather-forecast)
+[deployment](https://arkarlov.github.io/weather-forecast)
 
 ## Summary
 
